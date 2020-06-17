@@ -1,0 +1,29 @@
+.background {
+    background-image: url("../../../assets/img/map.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: black;
+    width: 100vh;
+    height: 100vh;
+    padding: 0;
+    margin:0;
+    top:0;
+    left: 0;
+    position: fixed;
+}
+
+.marker {
+    width:5vh;
+    height:5vh;
+    background-image: url("../../../assets/img/marker.png");
+    background-size: contain;
+    position:fixed;
+}
+
+.marker-unlocked {
+    width:5vh;
+    height:5vh;
+    background-image: url("../../../assets/img/marker_unlocked.png");
+    background-size: contain;
+    position:fixed;
+}

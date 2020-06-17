@@ -1,0 +1,8 @@
+<div class="background" (click)="setMarker($event)">
+</div>
+
+<div [class]="marker.unlocked ? 'marker-unlocked' : 'marker'" *ngFor="let marker of markerList" 
+    [style.left]="marker.x + 'px'" [style.top]="marker.y + 'px'"
+    [style.color]="marker.unlocked ? 'blue' : ''"
+    (click)="onClickMarker(marker.id)">
+</div>
