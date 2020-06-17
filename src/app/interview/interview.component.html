@@ -2,8 +2,9 @@
     <a routerLink="/" routerLinkActive="active"> <fa-icon 
         [icon]="backIcon" size="2x" [styles]="{'stroke': 'white', 'color': 'white'}"> Zurück</fa-icon></a>
 
-  <!--  <mat-basic-audio-player [audioUrl]="" [title]="msbapTitle" [autoPlay]="false" muted="muted" (ended)="onEnded($event)"
-        [displayTitle]="msbapDisplayTitle" [displayVolumeControls]="true"></mat-basic-audio-player>-->
+    <mat-basic-audio-player [audioUrl]="filename" [title]="filename" [autoPlay]="false"
+         [displayVolumeControls]="true" class="player"></mat-basic-audio-player>
+
     
     <ul class="details">
         <li><p> Name: Schmid Pius</p></li>

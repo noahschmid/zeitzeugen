@@ -14,6 +14,7 @@ import {InputTextModule} from 'primeng/inputtext';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { InterviewComponent } from './interview/interview.component';
 import { NgxAudioPlayerModule } from 'ngx-audio-player';
+import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { NgxAudioPlayerModule } from 'ngx-audio-player';
     DynamicDialogModule,
     InputTextModule,
     FontAwesomeModule,
-    NgxAudioPlayerModule
+    NgxAudioPlayerModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

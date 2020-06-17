@@ -5,6 +5,7 @@ export class Marker {
         this.id = id;
         this.unlocked = false;
         this.code = "A2D";
+        this.filename = "interview_pius.mp3";
     }
     
     x: number;
@@ -12,4 +13,5 @@ export class Marker {
     id: number;
     code: string;
     unlocked: boolean;
+    filename: string;
 }

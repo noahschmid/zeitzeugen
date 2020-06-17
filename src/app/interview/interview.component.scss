@@ -1,4 +1,32 @@
 .wrapper {
-    background-color: black;
+    background-color: grey;
     color:white;
 }
+
+.player {
+    color:white;
+    background-color: white;
+}
+
+.details {
+    text-decoration: none;
+    list-style: none;
+}
+
+::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+    background-color: blue; /*replace with your color*/
+}
+
+::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+    background-color: skyblue;  /*replace with your color*/
+}
+
+::ng-deep .mat-accent .mat-slider-thumb {
+    background-color: white;
+} 
+::ng-deep .mat-accent .mat-slider-thumb-label {
+    background-color: white;
+} 
+::ng-deep .mat-accent .mat-slider-track-fill {
+    background-color: white;
+} 
