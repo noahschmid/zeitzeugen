@@ -1,0 +1,8 @@
+<div class="wrapper">
+    <app-header></app-header>
+    Richten Sie nun Ihre Kamera auf den QR-Code neben dem Bild
+    <zxing-scanner (scanSuccess)="scanCompleted($event)" 
+        (camerasNotFound)="camerasNotFoundHandler($event)"
+        (scanError)="errorHandler($event)"></zxing-scanner>
+    <app-nav-back></app-nav-back>
+</div>

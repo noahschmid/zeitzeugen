@@ -1,8 +1,21 @@
-<div class="background" (click)="setMarker($event)">
+<div class="background" #mapContent (scroll)="onResize($event)" (click)="setMarker($event)">
+
+    <img src="../../../assets/img/map.jpg" class="map" id="map" />
 </div>
 
 <div [class]="marker.unlocked ? 'marker-unlocked' : 'marker'" *ngFor="let marker of markerList" 
-    [style.left]="marker.x + 'px'" [style.top]="marker.y + 'px'"
+    [style.left]="marker.left" [style.top]="marker.top"
     [style.color]="marker.unlocked ? 'blue' : ''"
     (click)="onClickMarker(marker.id)">
+</div>
+
+<img src="../../../assets/img/info.svg" (click)="showInfo()" class="info" id="info" />
+<img src="../../../assets/img/qrcode.svg" (click)="showScanner()" class="scanner" id="scanner" />
+
+
+
+<div (window:resize)="onResize($event)"></div>
+
+<div id="loading">
+    <mat-spinner class="spinner"></mat-spinner>
 </div>
