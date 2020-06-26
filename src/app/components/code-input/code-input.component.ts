@@ -4,6 +4,8 @@ import { MessageService } from 'primeng/api';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MarkerService } from 'src/app/services/marker-service/marker.service';
+import { GeneratorService } from 'src/app/services/generator/generator.service';
 
 @Component({
   selector: 'app-code-input',
@@ -13,7 +15,9 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class CodeInputComponent implements OnInit {
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any,
-    public dialogRef: MatDialogRef<CodeInputComponent>) { }
+    public dialogRef: MatDialogRef<CodeInputComponent>,
+    private markerService: MarkerService,
+    private generatorService: GeneratorService) { }
 
   ngOnInit(): void {
   }
@@ -31,7 +35,9 @@ export class CodeInputComponent implements OnInit {
       this.wrongInput = false;
       return;
     }
-    if(code == this.data.code) {
+
+    let correctCode = this.generatorService.encode(this.data);
+    if(code == correctCode) {
       console.log("correct code!");
       this.correctInput = true;
       this.wrongInput = false;

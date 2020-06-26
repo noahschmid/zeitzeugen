@@ -1,15 +1,16 @@
-<div class="wrapper" [style.height.px]="height" [style.width.px]="width">
-    <a routerLink="/" routerLinkActive="active"> <fa-icon 
-        [icon]="backIcon" size="2x" [styles]="{'stroke': 'white', 'color': 'white'}"> Zurück</fa-icon></a>
-
-    <mat-basic-audio-player [audioUrl]="filename" [title]="filename" [autoPlay]="false"
-         [displayVolumeControls]="true" class="player"></mat-basic-audio-player>
-
+<div class="wrapper">
+    <app-header></app-header>
+    <div class="person">
+        <ul class="details">
+            <p class="small">gesprochen von </p>
+            <li><p class="name"> {{ marker.speaker.getName() }}</p></li>
+            <p class="space"></p>
+            <li>Beruf: {{ marker.speaker.profession }} </li>
+            <li>Funktion: {{ marker.speaker.action }}</li>
+            <li>Alter damals: {{ marker.speaker.age }}</li>
+        </ul>
+    </div>
     
-    <ul class="details">
-        <li><p> Name: Schmid Pius</p></li>
-        <li>Funktion: Lehrer</li>
-        <li>Alter damals: 44</li>
-    </ul>
+    <app-nav-back></app-nav-back>
 </div>
 

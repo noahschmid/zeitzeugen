@@ -9,6 +9,9 @@ import {
   MessageService
 } from 'primeng/api';
 import { Router } from '@angular/router';
+import { Speaker } from 'src/app/models/speaker';
+import { MarkerService } from 'src/app/services/marker-service/marker.service';
+import { GeneratorService } from 'src/app/services/generator/generator.service';
 
 @Component({
   selector: 'app-map',
@@ -20,9 +23,9 @@ export class MapComponent implements OnInit {
 
   constructor(private dialogService: DialogService,
     private dialog: MatDialog,
-    private router: Router) { }
-
-  markerList: Marker[] = [];
+    private router: Router,
+    public markerService: MarkerService,
+    private generatorService: GeneratorService) { }
 
   editMode: boolean = true;
   width;
@@ -41,13 +44,9 @@ export class MapComponent implements OnInit {
       this.mapDim = map.getBoundingClientRect();
       console.log(this.mapDim);
 
-      let marker = new Marker(0.43589266440879826, 0.678125, 0, this.mapDim);
-      marker.unlocked = false;
-      this.markerList.push(marker);
       this.updateDimension();
 
       if(this.mapDim.width > this.windowDim.w) {
-        console.log("map bigger than screen. centering..");
         let scrollAmt = (this.mapDim.width  - this.windowDim.w)/2;
         console.log(scrollAmt);
         this.mapContent.nativeElement.scrollTo({ left: (this.mapContent.nativeElement.scrollLeft + scrollAmt), behavior: 'auto' });
@@ -59,29 +58,28 @@ export class MapComponent implements OnInit {
     if(!this.editMode || event.x < this.mapDim.x || event.x > this.mapDim.x + this.mapDim.width)
       return;
 
-    let markerDim = document.documentElement.clientHeight * 0.05;
-
     let normalized = {x:(event.x - this.mapDim.x) / this.mapDim.width, y:(event.y - this.mapDim.y) / this.mapDim.height};
-    console.log(event.x + " " + event.y);
-    console.log(normalized.x + " " + normalized.y);
-    let newMarker = new Marker(normalized.x, normalized.y, 0, this.mapDim);
-    this.markerList.push(newMarker);
-    console.log(newMarker.left + " " + newMarker.top);
+    let speaker = new Speaker("Jon", "Doe", "Testdummy", "Bot", 44);
+    let newMarker = new Marker(normalized.x, normalized.y, this.markerService.getMarkers.length, this.mapDim, speaker);
+    console.log(newMarker);
+    //this.markerService.addMarker(newMarker);
   }
 
   onClickMarker(id): void {
-    let marker = this.getMarker(id);
+    let marker = this.markerService.getMarker(id);
 
-    console.log(marker);
+    if(this.editMode)
+      console.log(this.generatorService.encode(id));
+
     if(marker.unlocked) {
-      this.router.navigate(["/interview"]);
+      this.router.navigate(["/interview"], { queryParams:{id:marker.id} });
     } else {
       const ref = this.dialog.open(CodeInputComponent, {
-        data:this.getMarker(id)
+        data:id
       });
 
       ref.afterClosed().subscribe(unlocked => {
-        this.getMarker(id).unlocked = unlocked;
+        this.markerService.unlock(id, unlocked);
       })
     }
   }
@@ -96,10 +94,9 @@ export class MapComponent implements OnInit {
     let infoIcon = document.getElementById("info");
     let scannerIcon = document.getElementById("scanner");
     infoIcon.style.left = (this.mapDim.x + this.windowDim.w*0.05) + "px";
-    scannerIcon.style.left = (this.windowDim.w - this.windowDim.w*0.20) + "px";
-    for(let m of this.markerList) {
-      m.updatePosition(this.mapDim);
-    }
+    scannerIcon.style.left = (this.mapDim.x + this.mapDim.width - document.documentElement.clientHeight *0.17) + "px";
+    
+    this.markerService.updatePosition(this.mapDim);
   }
 
   showInfo() {
@@ -108,15 +105,5 @@ export class MapComponent implements OnInit {
 
   showScanner() {
     this.router.navigate(["/scanner"]);
-  }
-
-
-  getMarker(id): Marker {
-    for(let i of this.markerList) {
-      if(i.id == id) {
-        return i;
-      }
-    }
-    return null;
   }
 }

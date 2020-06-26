@@ -3,7 +3,7 @@
     <img src="../../../assets/img/map.jpg" class="map" id="map" />
 </div>
 
-<div [class]="marker.unlocked ? 'marker-unlocked' : 'marker'" *ngFor="let marker of markerList" 
+<div [class]="marker.unlocked ? 'marker-unlocked' : 'marker'" *ngFor="let marker of markerService.getMarkers()" 
     [style.left]="marker.left" [style.top]="marker.top"
     [style.color]="marker.unlocked ? 'blue' : ''"
     (click)="onClickMarker(marker.id)">

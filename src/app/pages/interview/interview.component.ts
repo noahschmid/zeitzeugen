@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { faArrowLeft, faHandHoldingWater } from '@fortawesome/free-solid-svg-icons';
 import {Howl, Howler, Track} from 'howler';
 import { HttpDownloadProgressEvent } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
+import { Marker } from 'src/app/models/marker';
+import { MarkerService } from 'src/app/services/marker-service/marker.service';
 
 @Component({
   selector: 'app-interview',
@@ -10,7 +13,8 @@ import { HttpDownloadProgressEvent } from '@angular/common/http';
 })
 export class InterviewComponent implements OnInit {
 
-  constructor() { }
+  constructor(public activatedRoute: ActivatedRoute,
+    private markerService: MarkerService) { }
 
   backIcon = faArrowLeft;
   height = 0;
@@ -21,13 +25,21 @@ export class InterviewComponent implements OnInit {
   player;
   playing:boolean = false;
 
+  sub;
+  marker:Marker;
+
   ngOnInit(): void {
+    this.sub = this.activatedRoute
+      .queryParams
+      .subscribe(params => {
+        console.log(+params['id']);
+        this.marker = this.markerService.getMarker(+params['id']);
+        this.player = new Howl({
+          src:["../../../assets/audio/" + this.marker.filename]
+        });
+      });
     this.height = document.documentElement.clientHeight;
     this.width = document.documentElement.clientWidth;
-    this.filename = "../../../assets/audio/interview_pius.mp3";
-    this.player = new Howl({
-      src:[this.filename]
-    });
   }
 
 

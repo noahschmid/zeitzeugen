@@ -1,5 +1,7 @@
+import { Speaker } from './speaker';
+
 export class Marker {
-    constructor(x, y, id, dim) {
+    constructor(x, y, id, dim, speaker) {
         this.x = x;
         this.y = y;
         this.id = id;
@@ -7,6 +9,7 @@ export class Marker {
         this.code = "A2D";
         this.filename = "interview_pius.mp3";
         this.updatePosition(dim);
+        this.speaker = speaker;
     }
     
     x: number;
@@ -17,6 +20,7 @@ export class Marker {
     filename: string;
     left: string;
     top: string;
+    speaker: Speaker;
 
     updatePosition(dim) {
         this.left = (this.x*dim.width + dim.x - document.documentElement.clientHeight*0.05/2) + 'px';
