@@ -91,7 +91,7 @@ export class MapComponent implements OnInit {
 
   updateDimension() {
     this.mapDim = document.getElementById("map").getBoundingClientRect();
-    let infoIcon = document.getElementById("info");
+    let infoIcon = document.getElementById("info"); 
     let scannerIcon = document.getElementById("scanner");
     infoIcon.style.left = (this.mapDim.x + this.windowDim.w*0.05) + "px";
     scannerIcon.style.left = (this.mapDim.x + this.mapDim.width - document.documentElement.clientHeight *0.17) + "px";
