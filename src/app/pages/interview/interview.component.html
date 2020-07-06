@@ -1,16 +1,21 @@
 <div class="wrapper">
     <app-header></app-header>
-    <div class="person">
-        <ul class="details">
-            <p class="small">gesprochen von </p>
-            <li><p class="name"> {{ marker.speaker.getName() }}</p></li>
-            <p class="space"></p>
-            <li>Beruf: {{ marker.speaker.profession }} </li>
-            <li>Funktion: {{ marker.speaker.action }}</li>
-            <li>Alter damals: {{ marker.speaker.age }}</li>
-        </ul>
+    <div *ngIf="locked">
+        <app-locked></app-locked>
     </div>
-    
+
+    <div *ngIf="!locked">
+        <div class="person">
+            <ul class="details">
+                <p class="small">gesprochen von </p>
+                <li><p class="name"> {{ marker.speaker.getName() }}</p></li>
+                <p class="space"></p>
+                <li>Beruf: {{ marker.speaker.profession }} </li>
+                <li>Funktion: {{ marker.speaker.action }}</li>
+                <li>Alter damals: {{ marker.speaker.age }}</li>
+            </ul>
+        </div>
+    </div>
     <app-nav-back></app-nav-back>
 </div>
 

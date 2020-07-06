@@ -21,6 +21,7 @@ import { ScannerComponent } from './pages/scanner/scanner.component';
 import { NavBackComponent } from './components/nav-back/nav-back.component';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { HeaderComponent } from './components/header/header.component';
+import { LockedComponent } from './components/locked/locked.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { HeaderComponent } from './components/header/header.component';
     InfoComponent,
     ScannerComponent,
     NavBackComponent,
-    HeaderComponent
+    HeaderComponent,
+    LockedComponent
   ],
   imports: [
     BrowserModule,

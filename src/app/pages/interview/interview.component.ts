@@ -28,15 +28,27 @@ export class InterviewComponent implements OnInit {
   sub;
   marker:Marker;
 
+  locked: boolean = true;
+
   ngOnInit(): void {
     this.sub = this.activatedRoute
       .queryParams
       .subscribe(params => {
         console.log(+params['id']);
+
+        if(+params['ulock'] != null) {
+          this.markerService.activateCode(+params['ulock']);
+        }
+
         this.marker = this.markerService.getMarker(+params['id']);
+
+        if(this.marker == null)
+          return;
         this.player = new Howl({
           src:["../../../assets/audio/" + this.marker.filename]
         });
+
+        this.locked = false;
       });
     this.height = document.documentElement.clientHeight;
     this.width = document.documentElement.clientWidth;

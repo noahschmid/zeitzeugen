@@ -27,3 +27,10 @@ export class Marker {
         this.top = (this.y*dim.height + dim.y - document.documentElement.clientHeight*0.05) + 'px';
     }
 }
+
+export class LockedMarker extends Marker {
+    constructor(id) {
+        super(-1, -1, id, {}, {});
+        this.unlocked = false;
+    }
+}

@@ -1,8 +1,9 @@
 import { Injectable, OnInit } from '@angular/core';
-import { Marker } from 'src/app/models/marker';
+import { Marker, LockedMarker } from 'src/app/models/marker';
 import { Speaker } from 'src/app/models/speaker';
 import { $ } from 'protractor';
 import { GeneratorService } from '../generator/generator.service';
+import { timeStamp } from 'console';
 
 @Injectable({
   providedIn: 'root'
@@ -36,18 +37,20 @@ export class MarkerService {
 
     let codes = this.ulock.split(";");
     for(let c in codes) {
-      console.log(this.generatorService.decode(codes[c]));
-      this.getMarker(this.generatorService.decode(codes[c])).unlocked = true;
+      this.activateCode(codes[c]);
     }
   }
 
   getMarker(id): Marker {
-    for(let i of this.markerList) {
-      if(i.id == id) {
-        return i;
-      }
+    let marker = this.get(id);
+    if(marker == null)
+      return null;
+
+    if(marker.unlocked) {
+      return marker;
     }
-    return null;
+
+    return new LockedMarker(marker.id);
   }
 
   getMarkers(): Array<Marker> {
@@ -65,9 +68,24 @@ export class MarkerService {
     }
   }
 
+  get(id) {
+    for(let i of this.markerList) {
+      if(i.id == id) {
+        return i;
+      }
+    }
+    return null;
+  }
+
   unlock(id, unlocked) {
-    this.getMarker(id).unlocked = unlocked;
+    if(this.get(id) == null)
+      return;
+    this.get(id).unlocked = unlocked;
     this.ulock += this.ulock.length == 0 ? this.generatorService.encode(id) : ";" + this.generatorService.encode(id);
     localStorage.setItem("ulock", this.ulock);
+  }
+
+  activateCode(code) {
+    this.unlock(this.generatorService.decode(code), true);
   }
 }
