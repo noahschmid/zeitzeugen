@@ -46,6 +46,10 @@ export class GeneratorService {
 
   constructor() { 
     this.characters.sort(() => 0.02 - 0.5);
+
+    for(let i = 0; i < 24; ++i) {
+     // console.log(i +  ": " + this.encode(i));
+    }
   }
 
   encode(index) {

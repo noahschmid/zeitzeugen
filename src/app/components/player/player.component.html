@@ -1,0 +1,37 @@
+<div class="row" *ngIf="!loading">
+  <div class="col col-sm-2 col-md-2 text-center">
+    <div class="icon-holder">
+      <div class="middle">
+        <i [class]="playing ? 'fas fa-pause-circle playIcon' : 'fas fa-play-circle playIcon'" size="5x"
+          (click)="play()"></i>
+      </div>
+    </div>
+  </div>
+  <div class="col-9 col-sm-10 col-md-10">
+    <div class="bar-holder">
+      <div class="middle">
+        <div class="progress-bg" id="progressbar-bg" (click)="jumpTo($event)">
+          <div class="progress-fg" id="progressbar"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="loading-status">
+  <mat-spinner *ngIf="loading" class="spinner"></mat-spinner>
+</div>
+<!--
+<table class="media-table table">
+  <tr>
+    <td>
+      <fa-icon [icon]="playing ? pauseIcon : playIcon" size="5x" [styles]="{'stroke': 'white', 'color': 'white'}"
+        (click)="play()"> </fa-icon>
+    </td>
+    <td>
+      <div class="progress-bg" id="progressbar-bg" (click)="jumpTo($event)">
+        <div class="progress-fg" id="progressbar"></div>
+      </div>
+    </td>
+  </tr>
+</table>
+-->

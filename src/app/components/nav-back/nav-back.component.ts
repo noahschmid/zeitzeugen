@@ -16,6 +16,6 @@ export class NavBackComponent implements OnInit {
   }
 
   goBack() {
-    this.router.navigate(["/"]);
+    this.router.navigate(["/map"]);
   }
 }

@@ -39,16 +39,19 @@ export class MapComponent implements OnInit {
     this.windowDim = {w:document.documentElement.clientWidth, h:document.documentElement.clientHeight };
     let map = document.getElementById("map");
 
+    document.addEventListener('scroll', () => {
+      this.windowDim = {w:document.documentElement.clientWidth, h:document.documentElement.clientHeight };
+      this.updateDimension()
+    });
+
     setTimeout(() => {
       document.getElementById("loading").style.display = "none";
       this.mapDim = map.getBoundingClientRect();
-      console.log(this.mapDim);
 
       this.updateDimension();
 
       if(this.mapDim.width > this.windowDim.w) {
         let scrollAmt = (this.mapDim.width  - this.windowDim.w)/2;
-        console.log(scrollAmt);
         this.mapContent.nativeElement.scrollTo({ left: (this.mapContent.nativeElement.scrollLeft + scrollAmt), behavior: 'auto' });
       }      
     }, 200);
@@ -61,7 +64,6 @@ export class MapComponent implements OnInit {
     let normalized = {x:(event.x - this.mapDim.x) / this.mapDim.width, y:(event.y - this.mapDim.y) / this.mapDim.height};
     let speaker = new Speaker("Jon", "Doe", "Testdummy", "Bot", 44);
     let newMarker = new Marker(normalized.x, normalized.y, this.markerService.getMarkers.length, this.mapDim, speaker);
-    console.log(newMarker);
     //this.markerService.addMarker(newMarker);
   }
 
@@ -90,11 +92,22 @@ export class MapComponent implements OnInit {
   }
 
   updateDimension() {
+    if(document.getElementById("map") == null) {
+      return;
+    }
+
     this.mapDim = document.getElementById("map").getBoundingClientRect();
     let infoIcon = document.getElementById("info"); 
     let scannerIcon = document.getElementById("scanner");
-    infoIcon.style.left = (this.mapDim.x + this.windowDim.w*0.05) + "px";
-    scannerIcon.style.left = (this.mapDim.x + this.mapDim.width - document.documentElement.clientHeight *0.17) + "px";
+   // infoIcon.style.left = (this.mapDim.x + this.windowDim.w*0.05) + "px";
+
+    this.mapDim.x = this.mapDim.left;
+/*
+    if(document.documentElement.clientWidth < 450) {
+      scannerIcon.style.left = (document.documentElement.clientWidth - document.documentElement.clientHeight *0.13) + "px";
+    } else {
+      scannerIcon.style.left = (this.mapDim.x +  this.windowDim.w *0.20 ) + "px";
+    }*/
     
     this.markerService.updatePosition(this.mapDim);
   }

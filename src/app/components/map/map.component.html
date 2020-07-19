@@ -1,16 +1,16 @@
 <div class="background" #mapContent (scroll)="onResize($event)" (click)="setMarker($event)">
 
-    <img src="../../../assets/img/map.jpg" class="map" id="map" />
+    <img src="../../../assets/img/map.png" class="img-fluid map" id="map" />
 </div>
 
 <div [class]="marker.unlocked ? 'marker-unlocked' : 'marker'" *ngFor="let marker of markerService.getMarkers()" 
     [style.left]="marker.left" [style.top]="marker.top"
-    [style.color]="marker.unlocked ? 'blue' : ''"
+    [style.color]="marker.unlocked ? '#E4D16A' : ''"
     (click)="onClickMarker(marker.id)">
 </div>
 
-<img src="../../../assets/img/info.svg" (click)="showInfo()" class="info" id="info" />
-<img src="../../../assets/img/qrcode.svg" (click)="showScanner()" class="scanner" id="scanner" />
+<i (click)="showInfo()" class="fas fa-info-circle info" id="info" ></i>
+<i (click)="showScanner()" class="fas fa-qrcode scanner" id="scanner"></i>
 
 
 

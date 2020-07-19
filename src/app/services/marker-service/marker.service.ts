@@ -4,19 +4,28 @@ import { Speaker } from 'src/app/models/speaker';
 import { $ } from 'protractor';
 import { GeneratorService } from '../generator/generator.service';
 import { timeStamp } from 'console';
+import { Observable, Subject, of, Subscriber, BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MarkerService {
   private markerList:Array<Marker> = [];
-  private ulock : string = "";
+  private ulock = { items:[] };
+
+  public loaded = false;
+  private hasFinishedLoading: BehaviorSubject<boolean> = new BehaviorSubject(false);
+
+
+  getStatus(): Observable<boolean> {
+    return this.hasFinishedLoading.asObservable();
+  }
 
   constructor(private generatorService : GeneratorService) { 
     const dim = {x:0, y:0, width:0, height:0};
 
     if(localStorage.getItem("ulock") != null)
-      this.ulock = localStorage.getItem("ulock");
+      this.ulock = JSON.parse(localStorage.getItem("ulock"));
 
     fetch('../../../assets/json/data.json')
     .then(response => response.json())
@@ -24,25 +33,36 @@ export class MarkerService {
       for(let m of json) {
         let s = new Speaker(m.speaker.firstName, m.speaker.lastName, m.speaker.action, m.speaker.profession, m.speaker.age);
         this.markerList.push(new Marker(m.x, m.y, this.markerList.length, dim, s));
-        this.unlockItems();
+
+        if(this.markerList.length == 0) {
+          for(let i = 0; i < this.markerList.length; ++i) {
+            this.ulock.items.push(false);
+          }
+        }
       }
+
+      this.unlockItems();
+      this.loaded = true;
+      this.hasFinishedLoading.next(true);
     }).catch(err => {
       console.log(err);
     });
   }
 
+  isLoaded() { return this.loaded; }
+
   unlockItems() {
-    if(this.ulock.length == 0 || this.ulock.indexOf(";") == -1)
+    if(this.ulock.items.length == 0)
       return;
 
-    let codes = this.ulock.split(";");
-    for(let c in codes) {
-      this.activateCode(codes[c]);
+    for(let c in this.ulock.items) {
+      this.markerList[c].unlocked = this.ulock.items[c];
     }
   }
-
+ 
   getMarker(id): Marker {
     let marker = this.get(id);
+
     if(marker == null)
       return null;
 
@@ -80,9 +100,10 @@ export class MarkerService {
   unlock(id, unlocked) {
     if(this.get(id) == null)
       return;
+
     this.get(id).unlocked = unlocked;
-    this.ulock += this.ulock.length == 0 ? this.generatorService.encode(id) : ";" + this.generatorService.encode(id);
-    localStorage.setItem("ulock", this.ulock);
+    this.ulock.items[id] = unlocked;
+    localStorage.setItem("ulock", JSON.stringify(this.ulock));
   }
 
   activateCode(code) {

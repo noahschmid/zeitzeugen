@@ -10,5 +10,17 @@
             "action":"Information"
         },
         "filename":"interview_pius.mp3"
+    }, 
+    {
+        "x":0.7017000736339825,
+        "y":0.35,
+        "speaker":{
+            "firstName":"Jon",
+            "lastName":"Doe",
+            "profession":"Bot",
+            "age":5,
+            "action":"Bot"
+        },
+        "filename":"interview_pius.mp3"
     }
 ]

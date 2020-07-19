@@ -1,0 +1,1 @@
+scp -r dist/zeitzeugen/* root@33798.hostserv.eu:/var/www/zeitzeugen.art/html/

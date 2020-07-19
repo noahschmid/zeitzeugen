@@ -38,13 +38,11 @@ export class CodeInputComponent implements OnInit {
 
     let correctCode = this.generatorService.encode(this.data);
     if(code == correctCode) {
-      console.log("correct code!");
       this.correctInput = true;
       this.wrongInput = false;
 
       setTimeout(() => this.dialogRef.close(true), 800);
     } else {
-      console.log("wrong code!");
       this.wrongInput = true;
       this.correctInput = false;
       setTimeout(() => this.dialogRef.close(false), 800);

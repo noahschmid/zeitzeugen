@@ -1,0 +1,150 @@
+$--progress-width:100%;
+$--progress-left:0px;
+
+.wrapper {
+    background-color: green;
+    color:white;
+    width:100%;
+    height:100%;
+    padding:0;
+    margin:0;
+}
+
+.col {
+    text-align: center;
+    vertical-align: middle;
+    padding:0;
+}
+
+.col-9 {
+    text-align: left;
+    vertical-align: middle;
+    padding:0;
+}
+
+.row {
+    width:100%;
+    padding: 0;
+    margin:0;
+    height:100%;
+}
+
+.text {
+    line-height: normal;
+}
+
+.progress-bg {
+    background-color: #CFD0D1;
+    width:100%;
+    text-align: left;
+    height:25%;
+    border-radius: 25px;
+    position:relative;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -webkit-box-shadow: 10px 10px 36px -30px rgba(0,0,0,0.59);
+    -moz-box-shadow: 10px 10px 36px -30px rgba(0,0,0,0.59);
+    box-shadow: 10px 10px 36px -30px rgba(0,0,0,0.59);
+}
+
+.progress-fg {
+    background-color: #E4D16A;
+    width:100%;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    height:100%;
+    border-radius: 25px;
+    background-size: 440px 440px;
+    -webkit-background-size: 44p0x 440px;
+    -webkit-animation: animate-stripes 2s linear infinite;
+}
+
+.progress-fg:after {
+    content: "";
+    left:var(--progress-left);
+    width:var(--progress-width);
+    position: absolute;
+    height: 100%;
+    right: 0;
+
+    background: #CFD0D1;
+    z-index: 0;
+}
+
+
+/* For Mobile */
+@media screen and (max-width: 540px) {
+    .playIcon {
+        font-size: 15vw;
+        color: #CFD0D1;
+        text-align: center;
+        padding: 0em;
+    }
+}
+
+/* For Tablets */
+@media screen and (min-width: 540px) and (max-width: 767px) {
+    .playIcon {
+        font-size: 15vw;
+        color: #CFD0D1;
+        text-align: center;
+        padding: 0em;
+    }
+}
+
+/* For Tablets */
+@media screen and (min-width: 768px) and (max-width:990px) {
+    .playIcon {
+        font-size: 8vw;
+        color: #CFD0D1;
+        text-align: center;
+        padding: 0em;
+    }
+}
+
+/* For Tablets */
+@media screen and (min-width: 990px) {
+    .playIcon {
+        font-size: 5vw;
+        color: #CFD0D1;
+        text-align: center;
+        padding: 0em;
+    }
+}
+
+
+
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 0;
+    padding-right:2%;
+}
+
+.bar-holder {
+    display: table;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    padding-left:2vw;
+}
+
+.spinner {
+    margin:auto;
+    font-size:15vw;
+}
+
+.loading-status ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+    stroke: #CFD0D1;   
+}
+
+.icon-holder {
+    display: table;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}

@@ -1,8 +1,31 @@
-<div class="wrapper">
+<div class="row">
+  <div class="col-md-2 col-lg-3 hidden-sm"></div>
+  <div class="col-md-8 col-lg-6 middle col-sm-12">
     <app-header></app-header>
-    Richten Sie nun Ihre Kamera auf den QR-Code neben dem Bild
-    <zxing-scanner (scanSuccess)="scanCompleted($event)" 
-        (camerasNotFound)="camerasNotFoundHandler($event)"
-        (scanError)="errorHandler($event)"></zxing-scanner>
+
+    <div id="info">🎥 Keine Kamera gefunden. Bitte Zugriff auf Kamera aktivieren</div>
+
+    <div class="success" *ngIf="success">
+        <i class="fas fa-check-circle"></i>
+    </div>
+
+
+    <div class="scanner">
+        <video id="video" autoplay="true" style="display:none;"></video>
+        <canvas id="canvas" class="video"></canvas>
+    </div>
+
+
+    
+   
+    <!--
+    <zxing-scanner class="scanner" (scanSuccess)="scanCompleted($event)"
+      (camerasNotFound)="camerasNotFoundHandler($event)" (scanError)="errorHandler($event)"
+      (camerasFound)="camerasFoundHandler($event)" (camerasNotFound)="camerasNotFoundHandler($event)" id="scanner">
+    </zxing-scanner>-->
     <app-nav-back></app-nav-back>
+
+    
+  </div>
+  <div class="col-md-2 col-lg-3 hidden-sm"></div>
 </div>

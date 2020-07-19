@@ -1,12 +1,18 @@
 .footer {
-    width:100vw;
-    height:8vh;
-    background-color: black;
-    color: white;
-    font-size: 4vh;
+    min-width:100%;
+    background-color: var(--background-color);
+    color: #CFD0D1;
     text-align: center;
-    padding-top: 5vh;
-    border-top: 1px solid white;
-    bottom:0px;
-    position: absolute;
+    padding-top: 4vh;
+    padding-bottom:4vh;
+    border-top: 1px solid #CFD0D1;
+    cursor: pointer;
+    position:relative;
+    font-size:2vw;
+}
+
+@media screen and (max-width: 767px) {
+    .footer {
+        font-size: 8vw;
+    }
 }

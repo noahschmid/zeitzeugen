@@ -22,6 +22,9 @@ import { NavBackComponent } from './components/nav-back/nav-back.component';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { HeaderComponent } from './components/header/header.component';
 import { LockedComponent } from './components/locked/locked.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { TeaserComponent } from './pages/teaser/teaser.component';
+import { PlayerComponent } from './components/player/player.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,9 @@ import { LockedComponent } from './components/locked/locked.component';
     ScannerComponent,
     NavBackComponent,
     HeaderComponent,
-    LockedComponent
+    LockedComponent,
+    TeaserComponent,
+    PlayerComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +54,8 @@ import { LockedComponent } from './components/locked/locked.component';
     NgxAudioPlayerModule,
     MatSliderModule,
     MatProgressSpinnerModule,
-    ZXingScannerModule
+    ZXingScannerModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
