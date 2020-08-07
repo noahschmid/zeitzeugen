@@ -18,11 +18,11 @@ export class ScannerComponent implements OnInit, AfterViewInit {
 
   constructor(private router: Router) {}
 
-  found = true;
+  found = false;
   canvas;
   video;
   canvasElement;
-  info;
+  infoText;
   success = false;
 
   errorImage = new Image();
@@ -31,28 +31,30 @@ export class ScannerComponent implements OnInit, AfterViewInit {
     this.canvasElement = document.getElementById("canvas");
     this.video = document.getElementById("video");
     this.canvas = (this.canvasElement as any).getContext("2d");
-    this.info = document.getElementById("info");
+    this.infoText = document.getElementById("infoText");
 
     this.errorImage.src = "../../../assets/img/error.svg";
 
     var startTime = Date.now();
     var detectPermissionDialog = function (allowed) {
-      this.found = true;
-      if (Date.now() - startTime > 500 || allowed) {
-        this.found = true;
-        // dialog was shown
-        if(allowed) {
-          this.found = true;
-        }
-      }
+      this.found = allowed;
     };
 
     let self = this;
     var successCallback = function (stream) {
       //detectPermissionDialog(true);
-      this.info.innerText = "Richten Sie die Kamera nun auf den QR-Code neben der Stehle";
+      document.getElementById("infoText").innerText = "🎥 Richten Sie die Kamera nun auf den QR-Code neben der Stehle";
       (this.video as any).srcObject = stream;
+      this.found = true;
     };
+
+
+    setTimeout(function() {
+      let infoEl = document.getElementById("infoText");
+      if(!this.found && infoEl != null)
+        infoEl.innerText = "🎥 Bitte Zugriff auf Kamera aktivieren";
+    }.bind(this), 800);
+
 
     var errorCallback = function (error) {
       this.found = false;
@@ -86,15 +88,15 @@ export class ScannerComponent implements OnInit, AfterViewInit {
   }
 
   tick() {
-    if(this.video == null || this.video == undefined) {
+    if(this.video == null || this.video == undefined || document.getElementById("infoText") == null || !this.found) {
       requestAnimationFrame(() => this.tick());
       return;
     }
 
-    this.info.innerText = "⌛ Lädt Video..."
+    document.getElementById("infoText").innerText = "⌛ Lädt Video..."
       if (this.video.readyState === this.video.HAVE_ENOUGH_DATA) {
-        //this.info.hidden = true;
-        this.info.innerText = "Richten Sie die Kamera nun auf den QR-Code neben der Stehle";
+        //this.infoText.hidden = true;
+        document.getElementById("infoText").innerText = "🎥 Richten Sie die Kamera nun auf den QR-Code neben der Stehle";
         this.canvasElement.hidden = false;
       //  this.outputContainer.hidden = false;
 
@@ -105,6 +107,7 @@ export class ScannerComponent implements OnInit, AfterViewInit {
         var code = jsQR(imageData.data, imageData.width, imageData.height, {
           inversionAttempts: "dontInvert",
         });
+
         if (code) {
           if(code.data.indexOf("zeitzeugen.art/interview") == -1) {
             let width = code.location.topRightCorner.x - code.location.topLeftCorner.x;
@@ -117,11 +120,11 @@ export class ScannerComponent implements OnInit, AfterViewInit {
             this.canvas.strokeStyle = "white";
             this.canvas.drawImage(this.errorImage, code.location.topLeftCorner.x, code.location.topLeftCorner.y - height, width, height);
 
-            this.info.innerText = "Ungültiger QR-Code!";
-          } else if (code.data.indexOf("zeitzeugen.art") != -1) {
+            this.infoText.innerText = "Ungültiger QR-Code!";
+          } else if (code.data == "https://zeitzeugen.art/") {
             this.router.navigate["/map"];
           } else {
-            this.info.innerText = "";
+            this.infoText.innerText = "";
             this.drawLine(code.location.topLeftCorner, code.location.topRightCorner, true);
             this.drawLine(code.location.topRightCorner, code.location.bottomRightCorner, true);
             this.drawLine(code.location.bottomRightCorner, code.location.bottomLeftCorner, true);

@@ -56,7 +56,8 @@ export class MarkerService {
       return;
 
     for(let c in this.ulock.items) {
-      this.markerList[c].unlocked = this.ulock.items[c];
+      if(this.markerList[c] != undefined)
+        this.markerList[c].unlocked = this.ulock.items[c];
     }
   }
  

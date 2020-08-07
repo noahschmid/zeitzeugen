@@ -17,9 +17,9 @@
         "speaker":{
             "firstName":"Jon",
             "lastName":"Doe",
-            "profession":"Bot",
-            "age":5,
-            "action":"Bot"
+            "profession":"Platzhalter",
+            "age":55,
+            "action":"Platzhalter"
         },
         "filename":"interview_pius.mp3"
     }

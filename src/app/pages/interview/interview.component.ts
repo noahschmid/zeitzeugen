@@ -42,8 +42,8 @@ export class InterviewComponent implements OnInit {
     this.sub = this.activatedRoute
       .queryParams
       .subscribe(params => {
-        this.markerService.getStatus().subscribe(x => {
-          if(x) {
+        this.markerService.getStatus().subscribe(loaded => {
+          if(loaded) {
             if(params['ulock'] != null) 
               this.markerService.activateCode(params['ulock'].toUpperCase());
 

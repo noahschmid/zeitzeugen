@@ -1,16 +1,40 @@
-.wrapper {
-    background-color: white;
-    height:100px;
-}
 
 .code-input {
-    height:10vh;
-    width:20vh;
-    font-size: 8vh;
+    height:8vh;
+    width:15vh;
+    font-size: 6vh;
     text-align: center;
+    margin:0;
+    padding:0;
+    background-color: white;
+    border:0;
+    border-right: 0;
+    text-shadow: none;
 }
 
 .indicator {
     margin-left:3vh;
     vertical-align: middle;
+}
+
+.table {
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+}
+
+tr {
+    padding:0;
+    margin:0;
+    border: 0;
+    background-color: transparent;
+}
+
+td {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background-color: transparent;  
+    text-align: center;
+    align-items: center;
 }

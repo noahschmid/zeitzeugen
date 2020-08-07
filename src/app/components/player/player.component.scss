@@ -37,7 +37,7 @@ $--progress-left:0px;
     background-color: #CFD0D1;
     width:100%;
     text-align: left;
-    height:25%;
+    height:10%;
     border-radius: 25px;
     position:relative;
     -moz-border-radius: 25px;
@@ -76,7 +76,7 @@ $--progress-left:0px;
 /* For Mobile */
 @media screen and (max-width: 540px) {
     .playIcon {
-        font-size: 15vw;
+        font-size: 13vw;
         color: #CFD0D1;
         text-align: center;
         padding: 0em;
@@ -86,7 +86,7 @@ $--progress-left:0px;
 /* For Tablets */
 @media screen and (min-width: 540px) and (max-width: 767px) {
     .playIcon {
-        font-size: 15vw;
+        font-size: 10vw;
         color: #CFD0D1;
         text-align: center;
         padding: 0em;
@@ -106,7 +106,7 @@ $--progress-left:0px;
 /* For Tablets */
 @media screen and (min-width: 990px) {
     .playIcon {
-        font-size: 5vw;
+        font-size: 4vw;
         color: #CFD0D1;
         text-align: center;
         padding: 0em;

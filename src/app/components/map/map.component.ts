@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 import { Speaker } from 'src/app/models/speaker';
 import { MarkerService } from 'src/app/services/marker-service/marker.service';
 import { GeneratorService } from 'src/app/services/generator/generator.service';
+import { info } from 'console';
 
 @Component({
   selector: 'app-map',
@@ -64,7 +65,7 @@ export class MapComponent implements OnInit {
     let normalized = {x:(event.x - this.mapDim.x) / this.mapDim.width, y:(event.y - this.mapDim.y) / this.mapDim.height};
     let speaker = new Speaker("Jon", "Doe", "Testdummy", "Bot", 44);
     let newMarker = new Marker(normalized.x, normalized.y, this.markerService.getMarkers.length, this.mapDim, speaker);
-    //this.markerService.addMarker(newMarker);
+    this.markerService.addMarker(newMarker);
   }
 
   onClickMarker(id): void {
@@ -77,11 +78,14 @@ export class MapComponent implements OnInit {
       this.router.navigate(["/interview"], { queryParams:{id:marker.id} });
     } else {
       const ref = this.dialog.open(CodeInputComponent, {
-        data:id
+        data:id,
+        panelClass:'dialog-class'
       });
 
       ref.afterClosed().subscribe(unlocked => {
         this.markerService.unlock(id, unlocked);
+        if(unlocked)
+          this.router.navigate(["/interview"], {queryParams:{id:marker.id}});
       })
     }
   }
@@ -102,6 +106,10 @@ export class MapComponent implements OnInit {
    // infoIcon.style.left = (this.mapDim.x + this.windowDim.w*0.05) + "px";
 
     this.mapDim.x = this.mapDim.left;
+
+
+    infoIcon.style.marginLeft = (this.mapDim.width * 0.08) + "px";
+    scannerIcon.style.marginLeft = (this.mapDim.width - scannerIcon.getBoundingClientRect().width - this.mapDim.width * 0.08) + "px";
 /*
     if(document.documentElement.clientWidth < 450) {
       scannerIcon.style.left = (document.documentElement.clientWidth - document.documentElement.clientHeight *0.13) + "px";

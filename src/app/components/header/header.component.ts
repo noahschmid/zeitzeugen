@@ -9,7 +9,7 @@ export class HeaderComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {/*
     window.addEventListener('DOMContentLoaded', (event)=> {
       if(document.documentElement.clientWidth > 450) {
         let wrapper = document.getElementById("wrapper");
@@ -20,7 +20,7 @@ export class HeaderComponent implements OnInit {
         wrapper.style.borderLeft = "0px solid black";
         wrapper.style.borderRight = "0px solid black";
       }
-    });
+    });*/
   }
 
 }

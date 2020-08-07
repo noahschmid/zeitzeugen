@@ -1,15 +1,15 @@
-<table>
-    <tr>
-        <td>
-            <input type="text" class="code-input" 
-                maxlength="3" size="3" oninput="this.value = this.value.toUpperCase();" 
-                (keyup)="codeEntered($event)" />
-        </td>
-        <td>
-            <fa-icon class="indicator" *ngIf="correctInput" 
-                [icon]="correctIcon" size="5x" [styles]="{'stroke': 'green', 'color': 'green'}"></fa-icon>
-            <fa-icon class="indicator" *ngIf="wrongInput" [icon]="wrongIcon" size="5x" 
-                [styles]="{'stroke': 'red', 'color': 'red'}"></fa-icon>
-        </td>
-    </tr>
+<table class="table">
+  <tr>
+    <td>
+      <input type="text" class="code-input" maxlength="3" size="3" oninput="this.value = this.value.toUpperCase();"
+        (keyup)="codeEntered($event)" />
+    </td>
+
+    <td>
+      <fa-icon class="indicator" *ngIf="correctInput" [icon]="correctIcon" size="5x"
+        [styles]="{'stroke': 'green', 'color': 'green'}"></fa-icon>
+      <fa-icon class="indicator" *ngIf="wrongInput" [icon]="wrongIcon" size="5x"
+        [styles]="{'stroke': 'red', 'color': 'red'}"></fa-icon>
+    </td>
+  </tr>
 </table>
