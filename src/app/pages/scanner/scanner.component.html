@@ -11,18 +11,10 @@
 
 
     <div class="scanner">
-        <video id="video" autoplay="true" style="display:none;"></video>
+        <video id="video" autoplay="true" style="display:none;" autoplay playsinline></video>
         <canvas id="canvas" class="video"></canvas>
     </div>
 
-
-    
-   
-    <!--
-    <zxing-scanner class="scanner" (scanSuccess)="scanCompleted($event)"
-      (camerasNotFound)="camerasNotFoundHandler($event)" (scanError)="errorHandler($event)"
-      (camerasFound)="camerasFoundHandler($event)" (camerasNotFound)="camerasNotFoundHandler($event)" id="scanner">
-    </zxing-scanner>-->
     <app-nav-back></app-nav-back>
 
     

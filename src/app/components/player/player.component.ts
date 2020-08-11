@@ -51,7 +51,6 @@ export class PlayerComponent { //implements OnInit, OnDestroy {
   }
 
   play() {
-    console.log("hello");
     if(this.player == null)
       return;
 
