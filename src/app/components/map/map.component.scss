@@ -8,7 +8,7 @@
     height:3vh;
     //background-image: url("../../../assets/img/marker.png");
     background-size: contain;
-    position:fixed;
+    position:absolute;
     font-size: 3vh;
     color: rgb(180, 14, 14);
     text-align: center;
@@ -99,6 +99,7 @@
     -moz-box-shadow: 6px 10px 64px -18px black;
     box-shadow: 6px 10px 64px -18px black;
     z-index: 10;
+    position: relative;
   }
   
   

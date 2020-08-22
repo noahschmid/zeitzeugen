@@ -44,6 +44,7 @@ export class MarkerService {
       this.unlockItems();
       this.loaded = true;
       this.hasFinishedLoading.next(true);
+      //this.prettyPrintMarkers();
     }).catch(err => {
       console.log(err);
     });
@@ -110,5 +111,17 @@ export class MarkerService {
 
   activateCode(code) {
     this.unlock(this.generatorService.decode(code), true);
+  }
+
+  prettyPrintMarkers() {
+    let prettyString = "[ \n";
+    for(let i = 0; i < this.markerList.length; ++i) {
+      prettyString += this.markerList[i].prettyPrint();
+      if(i != this.markerList.length - 1)
+        prettyString += ", \n";
+    }
+
+    prettyString += "]";
+    console.log(prettyString);
   }
 }

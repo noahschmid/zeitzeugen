@@ -48,13 +48,20 @@ export class MapComponent implements OnInit {
     setTimeout(() => {
       document.getElementById("loading").style.display = "none";
       this.mapDim = map.getBoundingClientRect();
+      this.markerService.updatePosition(this.mapDim);
 
       this.updateDimension();
 
+      /*
       if(this.mapDim.width > this.windowDim.w) {
         let scrollAmt = (this.mapDim.width  - this.windowDim.w)/2;
         this.mapContent.nativeElement.scrollTo({ left: (this.mapContent.nativeElement.scrollLeft + scrollAmt), behavior: 'auto' });
-      }      
+      } */
+      
+      
+      
+      
+
     }, 200);
   }
 
@@ -62,7 +69,9 @@ export class MapComponent implements OnInit {
     if(!this.editMode || event.x < this.mapDim.x || event.x > this.mapDim.x + this.mapDim.width)
       return;
 
-    let normalized = {x:(event.x - this.mapDim.x) / this.mapDim.width, y:(event.y - this.mapDim.y) / this.mapDim.height};
+    let bounds = document.getElementById("container").getBoundingClientRect();
+
+    let normalized = {x:(event.x - bounds.x), y:(event.y - bounds.y)};
     let speaker = new Speaker("Jon", "Doe", "Testdummy", "Bot", 44);
     let newMarker = new Marker(normalized.x, normalized.y, this.markerService.getMarkers.length, this.mapDim, speaker, "filename");
     this.markerService.addMarker(newMarker);
@@ -104,13 +113,24 @@ export class MapComponent implements OnInit {
     let infoIcon = document.getElementById("info"); 
     let scannerIcon = document.getElementById("scanner");
 
-    this.mapDim.x = this.mapDim.left;
+    //this.mapDim.y = document.getElementById("map").offsetTop;
+    //this.mapDim.x = document.getElementById("map").offsetLeft;
 
+    /*
+    console.log(navigator.userAgent);
+    if(navigator.userAgent.indexOf("Safari") != -1) {
+      this.mapDim.x = this.mapDim.left + window.scrollX;
+      this.mapDim.y += window.scrollY;
+      console.log("safari");
+    } else {
+      this.mapDim.x = this.mapDim.left;
+      console.log("not safari");
+    }*/
 
     infoIcon.style.marginLeft = (this.mapDim.width * 0.08) + "px";
     scannerIcon.style.marginLeft = (this.mapDim.width - scannerIcon.getBoundingClientRect().width - this.mapDim.width * 0.08) + "px";
     
-    this.markerService.updatePosition(this.mapDim);
+    //this.markerService.updatePosition(this.mapDim);
   }
 
   showInfo() {

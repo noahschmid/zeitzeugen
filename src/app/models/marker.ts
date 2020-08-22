@@ -23,8 +23,19 @@ export class Marker {
     speaker: Speaker;
 
     updatePosition(dim) {
-        this.left = (this.x*dim.width + dim.x - document.documentElement.clientHeight*0.03/2) + 'px';
-        this.top = (this.y*dim.height + dim.y - document.documentElement.clientHeight*0.03) + 'px';
+        this.left = (this.x - document.documentElement.clientHeight*0.03/2) + "px";
+        this.top = (this.y - document.documentElement.clientHeight*0.03)+ "px";
+       // this.left = (this.x*dim.width + dim.x - document.documentElement.clientHeight*0.03/2 - dim.width) + 'px';
+       // this.top = (this.y*dim.height + dim.y - document.documentElement.clientHeight*0.03) + 'px';
+    }
+
+    prettyPrint() : String {
+        return JSON.stringify(this);
+    }
+
+    setPos(x, y) {
+        this.x = x;
+        this.y = y;
     }
 }
 

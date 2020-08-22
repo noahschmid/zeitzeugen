@@ -1,0 +1,392 @@
+[{
+    "x": 0.3487179487179487,
+    "y": 0.2580161900756939,
+    "id": 0,
+    "unlocked": true,
+    "code": "A2D",
+    "filename": "interview_roland_jeanneret.mp3",
+    "left": "-11.49px",
+    "top": "-22.98px",
+    "speaker": {
+      "firstName": "Roland",
+      "lastName": "Jeanneret",
+      "action": "",
+      "age": 53,
+      "description": "'Die Stimme der Glückskette'"
+    }
+  },
+  {
+    "x": 0.4314285714285714,
+    "y": 0.7481289174781617,
+    "id": 1,
+    "unlocked": null,
+    "code": "A2D",
+    "filename": "interview_christine_henzen.mp3",
+    "left": "-11.49px",
+    "top": "-22.98px",
+    "speaker": {
+      "firstName": "Christine",
+      "lastName": "Henzen-Eyer",
+      "action": "",
+      "age": 43,
+      "description": "Betreuung der schwer betroffenen Eltern"
+    }
+  },
+  {
+    "x": 0.5685894427192364,
+    "y": 0.5165623988384963,
+    "id": 2,
+    "unlocked": null,
+    "code": "A2D",
+    "filename": "interview_fabian_margelist.mp3",
+    "left": "-11.49px",
+    "top": "-22.98px",
+    "speaker": {
+      "firstName": "Fabian",
+      "lastName": "Margelist",
+      "action": "",
+      "age": 31,
+      "description": "Bewohner Inneres Dorf"
+    }
+  },
+  {
+    "x": 0.6612243390714077,
+    "y": 0.41322365867894517,
+    "id": 3,
+    "unlocked": null,
+    "code": "A2D",
+    "filename": "interview_hans-rudolph_mooser.mp3",
+    "left": "-11.49px",
+    "top": "-22.98px",
+    "speaker": {
+      "firstName": "Hans-Rudolf",
+      "lastName": "Mooser",
+      "action": "",
+      "age": 52,
+      "description": "Krisenstab"
+    }
+  },
+  {
+    "x": 0.4381060733144636,
+    "y": 0.2580690429413416,
+    "id": 4,
+    "unlocked": null,
+    "code": "A2D",
+    "filename": "interview_odilo_schmid.mp3",
+    "left": "-11.49px",
+    "top": "-22.98px",
+    "speaker": {
+      "firstName": "Odilo",
+      "lastName": "Schmid",
+      "action": "",
+      "age": 52,
+      "description": "Gemeindepräsident Ausserberg"
+    }
+  },
+  {
+    "x": 0.4156035587997059,
+    "y": 0.3679296274542871,
+    "id": 5,
+    "unlocked": null,
+    "code": "A2D",
+    "filename": "interview_martha_stöpfer.mp3",
+    "left": "-11.49px",
+    "top": "-22.98px",
+    "speaker": {
+      "firstName": "Martha",
+      "lastName": "Stöpfer",
+      "action": "",
+      "age": 57,
+      "description": "Geschäftsinhaberin"
+    }
+  },
+  {
+    "x": 0.6482284605995033,
+    "y": 0.3670208794896774,
+    "id": 6,
+    "unlocked": null,
+    "code": "A2D",
+    "filename": "interview_martin_guntern.mp3",
+    "left": "-11.49px",
+    "top": "-22.98px",
+    "speaker": {
+      "firstName": "Martin",
+      "lastName": "Guntern",
+      "action": "",
+      "age": 33,
+      "description": "Wirt Restaurant Baltschiederbach"
+    }
+  },
+  {
+    "x": 0.7012255420576555,
+    "y": 0.4301775402562209,
+    "id": 7,
+    "unlocked": null,
+    "code": "A2D",
+    "filename": "interview_renata_imseng.mp3",
+    "left": "-11.49px",
+    "top": "-22.98px",
+    "speaker": {
+      "firstName": "Renata",
+      "lastName": "Imseng",
+      "action": "",
+      "age": 40,
+      "description": "Gemeindepräsidentin Baltschieder"
+    }
+  },
+  {
+    "x": 0.7835442922770576,
+    "y": 0.3404897307141348,
+    "id": 8,
+    "unlocked": null,
+    "code": "A2D",
+    "filename": "interview_martina_voeten.mp3",
+    "left": "-11.49px",
+    "top": "-22.98px",
+    "speaker": {
+      "firstName": "Martina",
+      "lastName": "Voeten",
+      "action": "",
+      "age": 34,
+      "description": "Gerettet mit 2 Kleinkindern"
+    }
+  },
+  {
+    "x": 0.518239658138125,
+    "y": 0.6181916442294086,
+    "id": 9,
+    "unlocked": null,
+    "code": "A2D",
+    "filename": "interview_anton_zenklusen.mp3",
+    "left": "-11.49px",
+    "top": "-22.98px",
+    "speaker": {
+      "firstName": "Anton",
+      "lastName": "Zenklusen",
+      "action": "",
+      "age": 51,
+      "description": "In den Ferien weilend"
+    }
+  },
+  {
+    "x": 0.5918278048335954,
+    "y": 0.44567600599360707,
+    "id": 10,
+    "unlocked": null,
+    "code": "A2D",
+    "filename": "interview_roland_millius.mp3",
+    "left": "-11.49px",
+    "top": "-22.98px",
+    "speaker": {
+      "firstName": "Roland",
+      "lastName": "Millius",
+      "action": "",
+      "age": 40,
+      "description": "Feuerwehr"
+    }
+  },
+  {
+    "x": 0.5769230769230769,
+    "y": 0.7609598402018503,
+    "id": 11,
+    "unlocked": null,
+    "code": "A2D",
+    "filename": "interview_alain_nellen.mp3",
+    "left": "-11.49px",
+    "top": "-22.98px",
+    "speaker": {
+      "firstName": "Alain",
+      "lastName": "Nellen",
+      "action": "",
+      "age": 14,
+      "description": "OS-Schüler"
+    }
+  },
+  {
+    "x": 0.5153846153846153,
+    "y": 0.4716410849453322,
+    "id": 12,
+    "unlocked": null,
+    "code": "A2D",
+    "filename": "interview_bernhard_aufdereggen.mp3",
+    "left": "-11.49px",
+    "top": "-22.98px",
+    "speaker": {
+      "firstName": "Bernhard",
+      "lastName": "Aufdereggen",
+      "action": "",
+      "age": 49,
+      "description": "Arzt"
+    }
+  },
+  {
+    "x": 0.6750986024100487,
+    "y": 0.22691904947439634,
+    "id": 13,
+    "unlocked": null,
+    "code": "A2D",
+    "filename": "interview_pius_schmid.mp3",
+    "left": "-11.49px",
+    "top": "-22.98px",
+    "speaker": {
+      "firstName": "Pius",
+      "lastName": "Schmid",
+      "action": "",
+      "age": 44,
+      "description": "Krisenstab : Hotline  und Medien"
+    }
+  },
+  {
+    "x": 0.6951025641025649,
+    "y": 0.38953679562657695,
+    "id": 14,
+    "unlocked": null,
+    "code": "A2D",
+    "filename": "interview_kurt_gely.mp3",
+    "left": "-11.49px",
+    "top": "-22.98px",
+    "speaker": {
+      "firstName": "Kurt",
+      "lastName": "Gely",
+      "action": "",
+      "age": 54,
+      "description": "Koordinator der Arbeiten"
+    }
+  },
+  {
+    "x": 0.7331945076959463,
+    "y": 0.23327087731132834,
+    "id": 15,
+    "unlocked": false,
+    "code": "A2D",
+    "filename": "interview_manuela_millius.mp3",
+    "left": "-11.49px",
+    "top": "-22.98px",
+    "speaker": {
+      "firstName": "Manuela",
+      "lastName": "Millius",
+      "action": "",
+      "age": 8,
+      "description": "Schülerin"
+    }
+  },
+  {
+    "x": 0.7118926757577838,
+    "y": 0.19261917915496343,
+    "id": 16,
+    "unlocked": false,
+    "code": "A2D",
+    "filename": "interview_peter_margelist.mp3",
+    "left": "-11.49px",
+    "top": "-22.98px",
+    "speaker": {
+      "firstName": "Peter",
+      "lastName": "Margelist",
+      "action": "",
+      "age": 50,
+      "description": "Krisenstab: Schadenaufnahme und Mittelbeschaffung"
+    }
+  },
+  {
+    "x": 0.8319575466819723,
+    "y": 0.2840855000067845,
+    "id": 17,
+    "unlocked": false,
+    "code": "A2D",
+    "filename": "interview_daniel_rieder.mp3",
+    "left": "-11.49px",
+    "top": "-22.98px",
+    "speaker": {
+      "firstName": "Daniel",
+      "lastName": "Rieder",
+      "action": "",
+      "age": 44,
+      "description": "Zivilschutz Belp"
+    }
+  },
+  {
+    "x": 0.5472876107810739,
+    "y": 0.5686473871013389,
+    "id": 18,
+    "unlocked": false,
+    "code": "A2D",
+    "filename": "interview_josef_jerjen.mp3",
+    "left": "-11.49px",
+    "top": "-22.98px",
+    "speaker": {
+      "firstName": "Josef",
+      "lastName": "Jerjen",
+      "action": "",
+      "age": 52,
+      "description": "Bewohner Kumme"
+    }
+  },
+  {
+    "x": 0.29166562752312425,
+    "y": 0.45304412046917614,
+    "id": 19,
+    "unlocked": false,
+    "code": "A2D",
+    "filename": "interview_rafaela_wasmer.mp3",
+    "left": "-11.49px",
+    "top": "-22.98px",
+    "speaker": {
+      "firstName": "Rafaela",
+      "lastName": "Wasmer",
+      "action": "",
+      "age": 38,
+      "description": "Gemeindepräsidentin Eggerberg"
+    }
+  },
+  {
+    "x": 0.7304358974358974,
+    "y": 0.4093113961312027,
+    "id": 20,
+    "unlocked": false,
+    "code": "A2D",
+    "filename": "interview_marcel_vogel.mp3",
+    "left": "-11.49px",
+    "top": "-22.98px",
+    "speaker": {
+      "firstName": "Marcel",
+      "lastName": "Vogel",
+      "action": "",
+      "age": 47,
+      "description": "WB Journalist"
+    }
+  },
+  {
+    "x": 0.2274421987339416,
+    "y": 0.3070580888530861,
+    "id": 21,
+    "unlocked": false,
+    "code": "A2D",
+    "filename": "interview_josef_truffer.mp3",
+    "left": "-11.49px",
+    "top": "-22.98px",
+    "speaker": {
+      "firstName": "Josef",
+      "lastName": "Truffer",
+      "action": "",
+      "age": 42,
+      "description": "Koordinator Naturalspenden"
+    }
+  },
+  {
+    "x": 0,
+    "y": 0,
+    "id": 22,
+    "unlocked": false,
+    "code": "A2D",
+    "filename": "interview_viktor_ruch.mp3",
+    "left": "-11.49px",
+    "top": "-22.98px",
+    "speaker": {
+      "firstName": "Viktor",
+      "lastName": "Ruch",
+      "action": "",
+      "age": 56,
+      "description": "Schweizerisches Rotes Kreuz"
+    }
+  }
+]
