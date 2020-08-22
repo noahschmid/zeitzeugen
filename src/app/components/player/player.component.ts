@@ -33,6 +33,7 @@ export class PlayerComponent { //implements OnInit, OnDestroy {
     this.player = new Howl({
       src:["../../../assets/audio/" + this.filename],
       preload: true,
+      html5:true,
       onload:() => {
         this.loading = false;
       }

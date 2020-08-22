@@ -31,8 +31,8 @@ export class MarkerService {
     .then(response => response.json())
     .then(json => {
       for(let m of json) {
-        let s = new Speaker(m.speaker.firstName, m.speaker.lastName, m.speaker.action, m.speaker.profession, m.speaker.age);
-        this.markerList.push(new Marker(m.x, m.y, this.markerList.length, dim, s));
+        let s = new Speaker(m.speaker.firstName, m.speaker.lastName, m.speaker.action, m.speaker.description, m.speaker.age);
+        this.markerList.push(new Marker(m.x, m.y, this.markerList.length, dim, s, m.filename));
 
         if(this.markerList.length == 0) {
           for(let i = 0; i < this.markerList.length; ++i) {
@@ -75,12 +75,13 @@ export class MarkerService {
   }
 
   getMarkers(): Array<Marker> {
-    return this.markerList;
+    return this.markerList.filter(m => m.x != 0 && m.y != 0);
   }
 
   addMarker(marker:Marker) {
     marker.id = this.markerList.length;
     this.markerList.push(marker);
+    console.log((marker.id + 1) + " -> " + marker.x + " " + marker.y);
   }
 
   updatePosition(mapDim) {

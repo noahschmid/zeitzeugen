@@ -9,8 +9,9 @@
       </div>
 
       <i [class]="'fas fa-map-marker-alt ' + (marker.unlocked ? 'marker-unlocked' : 'marker')" 
-        *ngFor="let marker of markerService.getMarkers()" [style.left]="marker.left" [style.top]="marker.top" 
-        (click)="onClickMarker(marker.id)"></i> 
+        *ngFor="let marker of markerService.getMarkers()"
+        [style.left]="marker.left" [style.top]="marker.top" 
+        (click)="onClickMarker(marker.id)"><br><p style="color:black">{{ editMode ? (marker.id + 1) : '' }}</p></i> 
 
       <i (click)="showInfo()" class="fas fa-info-circle info" id="info"></i>
       <i (click)="showScanner()" class="fas fa-qrcode scanner" id="scanner"></i>

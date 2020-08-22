@@ -1,12 +1,12 @@
 import { Agent } from 'http';
 
 export class Speaker {
-    constructor(firstName, lastName, action, profession, age) {
+    constructor(firstName, lastName, action, description, age) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.action = action;
         this.age = age;
-        this.profession = profession;
+        this.description = description;
     }
 
     getName():String {
@@ -16,6 +16,6 @@ export class Speaker {
     firstName:String;
     lastName:String;
     action:String;
-    profession:String;
+    description:String;
     age:Number;
 }

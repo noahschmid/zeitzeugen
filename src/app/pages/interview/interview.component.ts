@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { faArrowLeft, faHandHoldingWater, faPlayCircle, faPauseCircle } from '@fortawesome/free-solid-svg-icons';
-import {Howl, Howler, Track} from 'howler';
+import { Howl, Howler, Track } from 'howler';
 import { HttpDownloadProgressEvent } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { Marker } from 'src/app/models/marker';

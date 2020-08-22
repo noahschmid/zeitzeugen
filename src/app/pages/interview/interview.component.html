@@ -20,8 +20,7 @@
             <p class="space"></p>
 
             <div class="text">
-              <li>Beruf: {{ marker.speaker.profession }} </li>
-              <li>Funktion: {{ marker.speaker.action }}</li>
+              <li *ngIf="marker.speaker.description != null">{{ marker.speaker.description }} </li>
               <li>Alter damals: {{ marker.speaker.age }}</li>
             </div>
           </ul>

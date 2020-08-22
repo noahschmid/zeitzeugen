@@ -1,26 +1,301 @@
 [
     {
-        "x":0.4358926644087982,
-        "y":0.678125,
+        "x": 0.3487179487179487, 
+        "y": 0.2580161900756939,
+        "nr":1,
+        "speaker":{
+            "firstName":"Roland",
+            "lastName":"Jeanneret",
+            "description":"'Die Stimme der Glückskette'",
+            "age":53,
+            "action":""
+        },
+        "filename":"interview_roland_jeanneret.mp3"
+    },
+    {
+        "x": 0.4314285714285714,
+        "y": 0.7481289174781617,
+        "nr":2,
+        "speaker":{
+            "firstName":"Christine",
+            "lastName":"Henzen-Eyer",
+            "description":"Betreuung der schwer betroffenen Eltern",
+            "age":43,
+            "action":""
+        },
+        "filename":"interview_christine_henzen.mp3"
+    },
+    {
+        "x": 0.5685894427192364, 
+        "y": 0.5165623988384963,
+        "nr":3,
+        "speaker":{
+            "firstName":"Fabian",
+            "lastName":"Margelist",
+            "description":"Bewohner Inneres Dorf",
+            "age":31,
+            "action":""
+        },
+        "filename":"interview_fabian_margelist.mp3"
+    },
+    {
+        "x": 0.6612243390714076, 
+        "y": 0.41322365867894517,
+        "nr":4,
+        "speaker":{
+            "firstName":"Hans-Rudolf",
+            "lastName":"Mooser",
+            "description":"Krisenstab",
+            "age":52,
+            "action":""
+        },
+        "filename":"interview_hans-rudolph_mooser.mp3"
+    },
+    {
+        "x": 0.4381060733144636 , 
+        "y": 0.2580690429413416,
+        "nr":5,
+        "speaker":{
+            "firstName":"Odilo",
+            "lastName":"Schmid",
+            "description":"Gemeindepräsident Ausserberg",
+            "age":52,
+            "action":""
+        },
+        "filename":"interview_odilo_schmid.mp3"
+    },
+    {
+        "x": 0.4156035587997059, 
+        "y": 0.3679296274542871,
+        "nr":6,
+        "speaker":{
+            "firstName":"Martha",
+            "lastName":"Stöpfer",
+            "description":"Geschäftsinhaberin",
+            "age":57,
+            "action":""
+        },
+        "filename":"interview_martha_stöpfer.mp3"
+    },
+    {
+        "x": 0.6482284605995033 , 
+        "y": 0.3670208794896774,
+        "nr":7,
+        "speaker":{
+            "firstName":"Martin",
+            "lastName":"Guntern",
+            "description":"Wirt Restaurant Baltschiederbach",
+            "age":33,
+            "action":""
+        },
+        "filename":"interview_martin_guntern.mp3"
+    },
+    {
+        "x": 0.7012255420576555, 
+        "y": 0.4301775402562209,
+        "nr":8,
+        "speaker":{
+            "firstName":"Renata",
+            "lastName":"Imseng",
+            "description":"Gemeindepräsidentin Baltschieder",
+            "age":40,
+            "action":""
+        },
+        "filename":"interview_renata_imseng.mp3"
+    }, 
+    {
+        "x": 0.7835442922770576, 
+        "y": 0.3404897307141348,
+        "nr":9,
+        "speaker":{
+            "firstName":"Martina",
+            "lastName":"Voeten",
+            "description":"Gerettet mit 2 Kleinkindern",
+            "age":34,
+            "action":""
+        },
+        "filename":"interview_martina_voeten.mp3"
+    },
+    {
+        "x": 0.518239658138125, 
+        "y": 0.6181916442294086,
+        "nr":10,
+        "speaker":{
+            "firstName":"Anton",
+            "lastName":"Zenklusen",
+            "description":"In den Ferien weilend",
+            "age":51,
+            "action":""
+        },
+        "filename":"interview_anton_zenklusen.mp3"
+    },
+    {
+        "x": 0.5918278048335954 ,
+        "y": 0.44567600599360707,
+        "nr":11,
+        "speaker":{
+            "firstName":"Roland",
+            "lastName":"Millius",
+            "description":"Feuerwehr",
+            "age":40,
+            "action":""
+        },
+        "filename":"interview_roland_millius.mp3"
+    },
+    {
+        "x": 0.5769230769230769, 
+        "y": 0.7609598402018503,
+        "nr":12,
+        "speaker":{
+            "firstName":"Alain",
+            "lastName":"Nellen",
+            "description":"OS-Schüler",
+            "age":14,
+            "action":""
+        },
+        "filename":"interview_alain_nellen.mp3"
+    },
+    {
+        "x": 0.5153846153846153,
+        "y": 0.4716410849453322,
+        "nr":13,
+        "speaker":{
+            "firstName":"Bernhard",
+            "lastName":"Aufdereggen",
+            "description":"Arzt",
+            "age":49,
+            "action":""
+        },
+        "filename":"interview_bernhard_aufdereggen.mp3"
+    },
+    {
+        "x": 0.6750986024100487 ,
+        "y": 0.22691904947439634,
+        "nr":14,
         "speaker":{
             "firstName":"Pius",
             "lastName":"Schmid",
-            "profession":"Primarlehrer",
+            "description":"Krisenstab : Hotline  und Medien",
             "age":44,
-            "action":"Information"
+            "action":""
         },
-        "filename":"interview_pius.mp3"
-    }, 
+        "filename":"interview_pius_schmid.mp3"
+    },
     {
-        "x":0.7017000736339825,
-        "y":0.35,
+        "x": 0.6951025641025649,
+        "y": 0.38953679562657695,
+        "nr":15,
         "speaker":{
-            "firstName":"Jon",
-            "lastName":"Doe",
-            "profession":"Platzhalter",
-            "age":55,
-            "action":"Platzhalter"
+            "firstName":"Kurt",
+            "lastName":"Gely",
+            "description":"Koordinator der Arbeiten",
+            "age":54,
+            "action":""
         },
-        "filename":"interview_pius.mp3"
+        "filename":"interview_kurt_gely.mp3"
+    },
+    {
+        "x": 0.7331945076959463 ,
+        "y": 0.23327087731132834,
+        "nr":16,
+        "speaker":{
+            "firstName":"Manuela",
+            "lastName":"Millius",
+            "description":"Schülerin",
+            "age":8,
+            "action":""
+        },
+        "filename":"interview_manuela_millius.mp3"
+    },
+    {
+        "x": 0.7118926757577838 ,
+        "y": 0.19261917915496343,
+        "nr":17,
+        "speaker":{
+            "firstName":"Peter",
+            "lastName":"Margelist",
+            "description":"Krisenstab: Schadenaufnahme und Mittelbeschaffung",
+            "age":50,
+            "action":""
+        },
+        "filename":"interview_peter_margelist.mp3"
+    },
+    {
+        "x": 0.8319575466819723  ,
+        "y": 0.2840855000067845,
+        "nr":18,
+        "speaker":{
+            "firstName":"Daniel",
+            "lastName":"Rieder",
+            "description":"Zivilschutz Belp",
+            "age":44,
+            "action":""
+        },
+        "filename":"interview_daniel_rieder.mp3"
+    },
+    {
+        "x": 0.5472876107810739, 
+        "y": 0.5686473871013389,
+        "nr":19,
+        "speaker":{
+            "firstName":"Josef",
+            "lastName":"Jerjen",
+            "description":"Bewohner Kumme",
+            "age":52,
+            "action":""
+        },
+        "filename":"interview_josef_jerjen.mp3"
+    },
+    {
+        "x": 0.29166562752312425,
+        "y": 0.45304412046917614,
+        "nr":20,
+        "speaker":{
+            "firstName":"Rafaela",
+            "lastName":"Wasmer",
+            "description":"Gemeindepräsidentin Eggerberg",
+            "age":38,
+            "action":""
+        },
+        "filename":"interview_rafaela_wasmer.mp3"
+    },
+    {
+        "x": 0.7304358974358974,
+        "y": 0.4093113961312027,
+        "nr":21,
+        "speaker":{
+            "firstName":"Marcel",
+            "lastName":"Vogel",
+            "description":"WB Journalist",
+            "age":47,
+            "action":""
+        },
+        "filename":"interview_marcel_vogel.mp3"
+    },
+    {
+        "x": 0.2274421987339416 ,
+        "y": 0.3070580888530861,
+        "nr":22,
+        "speaker":{
+            "firstName":"Josef",
+            "lastName":"Truffer",
+            "description":"Koordinator Naturalspenden",
+            "age":42,
+            "action":""
+        },
+        "filename":"interview_josef_truffer.mp3"
+    },
+    {
+        "x": 0 ,
+        "y": 0,
+        "nr":23,
+        "speaker":{
+            "firstName":"Viktor",
+            "lastName":"Ruch",
+            "description":"Schweizerisches Rotes Kreuz",
+            "age":56,
+            "action":""
+        },
+        "filename":"interview_viktor_ruch.mp3"
     }
 ]

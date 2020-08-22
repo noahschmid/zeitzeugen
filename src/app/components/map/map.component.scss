@@ -4,23 +4,23 @@
 }
 
 .marker {
-    width:5vh;
-    height:5vh;
+    width:3vh;
+    height:3vh;
     //background-image: url("../../../assets/img/marker.png");
     background-size: contain;
     position:fixed;
-    font-size: 5vh;
-    color: var(--background-color);
+    font-size: 3vh;
+    color: rgb(180, 14, 14);
     text-align: center;
 }
 
 .marker-unlocked {
-    width:5vh;
-    height:5vh;
+    width:3vh;
+    height:3vh;
    // background-image: url("../../../assets/img/marker_unlocked.png");
     background-size: contain;
     position:fixed;
-    font-size: 5vh;
+    font-size: 3vh;
     color: #E4D16A;
     text-align: center;
 }
@@ -37,7 +37,7 @@
 }
 
 .info {
-    position: fixed;
+    position: absolute;
     margin-left:0;
     color:black;
     font-size: 8vh;
@@ -47,7 +47,7 @@
 }
 
 .scanner {
-    position: fixed;
+    position: absolute;
     margin-left:90%;
     color:black;
     font-size:8vh;

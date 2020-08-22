@@ -1,0 +1,26 @@
+[
+    {
+        "x":0.4358926644087982,
+        "y":0.678125,
+        "speaker":{
+            "firstName":"Pius",
+            "lastName":"Schmid",
+            "profession":"Primarlehrer",
+            "age":44,
+            "action":"Information"
+        },
+        "filename":"interview_pius.mp3"
+    }, 
+    {
+        "x":0.7017000736339825,
+        "y":0.35,
+        "speaker":{
+            "firstName":"Jon",
+            "lastName":"Doe",
+            "profession":"Platzhalter",
+            "age":55,
+            "action":"Platzhalter"
+        },
+        "filename":"interview_pius.mp3"
+    }
+]

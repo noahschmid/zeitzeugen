@@ -14,13 +14,14 @@
 
 .person {
     border-top: 1px solid white;
-    font-size: 3vh;
+    font-size: 15px;
     font-weight: lighter;
+    line-height:8px;
     padding-top: 5vh;
     min-height:45vh;
 }
 .name {
-    font-size: min(5vw, 55px);
+    font-size: 35px;
     font-weight: normal;
 }
 
@@ -29,8 +30,8 @@
 }
 
 .small {
-    font-size:2.5vh;
-    font-weight: normal;
+    font-size:15px;
+    font-weight: lighter;
     padding: 0;
     margin-bottom:1vh;
     line-height:normal;
@@ -43,7 +44,7 @@
     margin-top:-5vh;
 }
 .text {
-    line-height: normal;
+    line-height: 18px;
 }
 
 
@@ -61,5 +62,10 @@
   @media screen and (max-width: 540px) {
     .middle {
         box-shadow: none !important;
+    }
+
+    .name {
+        font-size: 22px;
+        font-weight: normal;
     }
 }
