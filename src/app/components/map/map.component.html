@@ -1,25 +1,25 @@
-<div class="wrapper">
+<div tabindex="0" id="wrapper" class="wrapper" (keypress)="printMarkers($event)">
   <div class="row">
     <div class="col-md-3 col-lg-4"></div>
     <div class="col-md-6 col-lg-4 middle" id="container">
       <app-header></app-header>
 
-      <div class="background" #mapContent (scroll)="onResize($event)" (click)="setMarker($event)">
-        <img src="../../../assets/img/map.jpg" style="margin-top:-6vh" class="img-fluid map" id="map" />
+      <div class="background" id="background" #mapContent (scroll)="onResize($event)" >
+        <img src="../../../assets/img/map.jpg" (click)="setMarker($event)" style="margin-top:-6vh" class="img-fluid map" id="map" />
+        <i [class]="'fas fa-map-marker-alt ' + (marker.unlocked ? 'marker-unlocked' : 'marker')"
+          *ngFor="let marker of markerService.getMarkers()" [style.left]="marker.left" [style.top]="marker.top"
+          (click)="onClickMarker(marker.id)"><br>
+          <p [style]="!deleteMode ? 'color:black' : 'color:red'">{{ editMode ? (marker.id + 1) : '' }}</p>
+        </i>
+        <i (click)="showInfo()" class="fas fa-info-circle info" id="info"></i>
+        <i (click)="showScanner()" class="fas fa-qrcode scanner" id="scanner"></i>
+        <div class="bonus" *ngIf="bonusUnlocked">
+          <i class="fas fa-map-marker-alt" (click)="onClickBonus()" id="bonusIcon"></i>
+        </div>
       </div>
 
-      <i [class]="'fas fa-map-marker-alt ' + (marker.unlocked ? 'marker-unlocked' : 'marker')" 
-        *ngFor="let marker of markerService.getMarkers()"
-        [style.left]="marker.left" [style.top]="marker.top" 
-        (click)="onClickMarker(marker.id)"><br><p style="color:black">{{ editMode ? (marker.id + 1) : '' }}</p></i> 
-
-      <i (click)="showInfo()" class="fas fa-info-circle info" id="info"></i>
-      <i (click)="showScanner()" class="fas fa-qrcode scanner" id="scanner"></i>
-
       <div (window:resize)="onResize($event)"></div>
-      
     </div>
-
     <div class="col-md-3 col-lg-4"></div>
   </div>
 

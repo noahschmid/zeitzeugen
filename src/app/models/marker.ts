@@ -1,14 +1,15 @@
 import { Speaker } from './speaker';
 
 export class Marker {
-    constructor(x, y, id, dim, speaker, filename) {
+    constructor(x, y, id, speaker, filename) {
         this.x = x;
         this.y = y;
+        this.left = (this.x - document.documentElement.clientHeight*0.03/2) + "px";
+        this.top = (this.y - document.documentElement.clientHeight*0.03)+ "px";
         this.id = id;
         this.unlocked = false;
         this.code = "A2D";
         this.filename = filename;
-        this.updatePosition(dim);
         this.speaker = speaker;
     }
     
@@ -21,27 +22,28 @@ export class Marker {
     left: string;
     top: string;
     speaker: Speaker;
-
-    updatePosition(dim) {
-        this.left = (this.x - document.documentElement.clientHeight*0.03/2) + "px";
-        this.top = (this.y - document.documentElement.clientHeight*0.03)+ "px";
-       // this.left = (this.x*dim.width + dim.x - document.documentElement.clientHeight*0.03/2 - dim.width) + 'px';
-       // this.top = (this.y*dim.height + dim.y - document.documentElement.clientHeight*0.03) + 'px';
-    }
-
+    
     prettyPrint() : String {
-        return JSON.stringify(this);
+        let tmp = Object.assign({}, this as any);
+        tmp = tmp
+        delete(tmp.left);
+        delete(tmp.top);
+        delete(tmp.code);
+        delete(tmp.unlocked);
+        tmp.number = tmp.id + 1;
+        delete(tmp.id);
+        return JSON.stringify(tmp);
     }
 
-    setPos(x, y) {
-        this.x = x;
-        this.y = y;
+    setBounds(bounds) {
+        this.left = (this.x*bounds.width - document.documentElement.clientHeight*0.03/2) + "px";
+        this.top = (this.y*bounds.height - document.documentElement.clientHeight*0.09)+ "px";
     }
 }
 
 export class LockedMarker extends Marker {
     constructor(id) {
-        super(-1, -1, id, {}, {}, "");
+        super(-1, -1, id, {}, "");
         this.unlocked = false;
     }
 }

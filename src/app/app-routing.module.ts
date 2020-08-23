@@ -12,7 +12,8 @@ const routes: Routes = [
   { path:'map', component:MapComponent},
   { path:'interview', component:InterviewComponent},
   { path:'info', component:InfoComponent},
-  { path:'scanner', component:ScannerComponent}
+  { path:'scanner', component:ScannerComponent},
+  { path:'**', redirectTo:''}
 ];
 
 @NgModule({

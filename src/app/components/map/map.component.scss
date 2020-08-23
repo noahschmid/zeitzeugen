@@ -1,12 +1,14 @@
 
 .background {
     width:100%;
+    height:100%;
+    position: relative;
+    clear:both;
 }
 
 .marker {
     width:3vh;
     height:3vh;
-    //background-image: url("../../../assets/img/marker.png");
     background-size: contain;
     position:absolute;
     font-size: 3vh;
@@ -17,9 +19,8 @@
 .marker-unlocked {
     width:3vh;
     height:3vh;
-   // background-image: url("../../../assets/img/marker_unlocked.png");
     background-size: contain;
-    position:fixed;
+    position:absolute;
     font-size: 3vh;
     color: #E4D16A;
     text-align: center;
@@ -55,6 +56,20 @@
     cursor: pointer;
 }
 
+.bonus {
+    position: absolute;
+    margin-left:50%;
+    align-self: center;
+    color:#E4D16A;
+    font-size:8vh;
+    //background-color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+#bonusIcon {
+    margin-left:-50%;
+}
+
 #loading  {
     background-color: var(--background-color);
     width: 110vw;
@@ -85,6 +100,7 @@
     font-size: 2.5vh;
     line-height: normal;
     position: relative;
+    outline:none;
   }
   
   app-nav-back {
@@ -99,7 +115,7 @@
     -moz-box-shadow: 6px 10px 64px -18px black;
     box-shadow: 6px 10px 64px -18px black;
     z-index: 10;
-    position: relative;
+    position:relative;
   }
   
   

@@ -15,7 +15,9 @@ export class MarkerService {
 
   public loaded = false;
   private hasFinishedLoading: BehaviorSubject<boolean> = new BehaviorSubject(false);
-
+  private bonusMarker : Marker;
+  private bounds;
+  private mapDim;
 
   getStatus(): Observable<boolean> {
     return this.hasFinishedLoading.asObservable();
@@ -31,8 +33,13 @@ export class MarkerService {
     .then(response => response.json())
     .then(json => {
       for(let m of json) {
-        let s = new Speaker(m.speaker.firstName, m.speaker.lastName, m.speaker.action, m.speaker.description, m.speaker.age);
-        this.markerList.push(new Marker(m.x, m.y, this.markerList.length, dim, s, m.filename));
+        let s = new Speaker(m.speaker.firstName, m.speaker.lastName, m.speaker.description, m.speaker.age);
+        let marker = new Marker(m.x, m.y, this.markerList.length, s, m.filename);
+        
+        if((m.bonus as any) == true) 
+          this.bonusMarker = marker;
+        else
+          this.markerList.push(marker);
 
         if(this.markerList.length == 0) {
           for(let i = 0; i < this.markerList.length; ++i) {
@@ -44,10 +51,25 @@ export class MarkerService {
       this.unlockItems();
       this.loaded = true;
       this.hasFinishedLoading.next(true);
-      //this.prettyPrintMarkers();
     }).catch(err => {
       console.log(err);
     });
+  }
+
+  deleteMarker(id: number) {
+    for(let i of this.markerList) {
+      if(i.id > id) {
+        i.id--;
+      }
+    }
+    this.markerList.splice(id, 1);
+  }
+
+  setBounds(bounds) {
+    this.bounds = bounds;
+    for(let i of this.markerList) {
+      i.setBounds(this.bounds);
+    }
   }
 
   isLoaded() { return this.loaded; }
@@ -81,17 +103,15 @@ export class MarkerService {
 
   addMarker(marker:Marker) {
     marker.id = this.markerList.length;
+    marker.setBounds(this.bounds);
     this.markerList.push(marker);
     console.log((marker.id + 1) + " -> " + marker.x + " " + marker.y);
   }
 
-  updatePosition(mapDim) {
-    for(let m of this.markerList) {
-      m.updatePosition(mapDim);
-    }
-  }
-
   get(id) {
+    if(id == -1 && this.allUnlocked())
+      return this.bonusMarker;
+
     for(let i of this.markerList) {
       if(i.id == id) {
         return i;
@@ -113,7 +133,7 @@ export class MarkerService {
     this.unlock(this.generatorService.decode(code), true);
   }
 
-  prettyPrintMarkers() {
+  prettyPrintMarkers() : string {
     let prettyString = "[ \n";
     for(let i = 0; i < this.markerList.length; ++i) {
       prettyString += this.markerList[i].prettyPrint();
@@ -122,6 +142,16 @@ export class MarkerService {
     }
 
     prettyString += "]";
-    console.log(prettyString);
+    return prettyString;
+  }
+
+  allUnlocked() : boolean{
+    for(let i of this.markerList) {
+      if(!i.unlocked) {
+        return false;
+      }
+    }
+
+    return true;
   }
 }
