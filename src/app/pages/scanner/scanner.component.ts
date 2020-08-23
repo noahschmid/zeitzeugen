@@ -9,6 +9,8 @@ import {
 
 import jsQR from "jsqr";
 
+import{GoogleAnalyticsService} from '../../services/google-analytics/google-analytics.service';
+
 @Component({
   selector: 'app-scanner',
   templateUrl: './scanner.component.html',
@@ -16,7 +18,8 @@ import jsQR from "jsqr";
 })
 export class ScannerComponent implements OnInit, AfterViewInit {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router,
+    private googleAnalyticsService: GoogleAnalyticsService) {}
 
   found = false;
   canvas;
@@ -121,6 +124,7 @@ export class ScannerComponent implements OnInit, AfterViewInit {
             this.canvas.drawImage(this.errorImage, code.location.topLeftCorner.x, code.location.topLeftCorner.y - height, width, height);
 
             this.infoText.innerText = "Ungültiger QR-Code!";
+            this.googleAnalyticsService.eventEmitter("qr_code_scanner", "invalid", "scan");
           } else if (code.data == "https://zeitzeugen.art/") {
             this.router.navigate["/map"];
           } else {
@@ -149,6 +153,8 @@ export class ScannerComponent implements OnInit, AfterViewInit {
 
     this.canvasElement.style.display = "none";
 
+    this.googleAnalyticsService.eventEmitter("qr_code_scanner", "successful", "scan");
+    
     window.setTimeout(() => {
       this.router.navigate(["/interview"], {
         queryParams: {

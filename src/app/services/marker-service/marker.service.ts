@@ -5,6 +5,7 @@ import { $ } from 'protractor';
 import { GeneratorService } from '../generator/generator.service';
 import { timeStamp } from 'console';
 import { Observable, Subject, of, Subscriber, BehaviorSubject } from 'rxjs';
+import{GoogleAnalyticsService} from '../../services/google-analytics/google-analytics.service';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +24,8 @@ export class MarkerService {
     return this.hasFinishedLoading.asObservable();
   }
 
-  constructor(private generatorService : GeneratorService) { 
+  constructor(private generatorService : GeneratorService,
+    private googleAnalyticsService : GoogleAnalyticsService) { 
     const dim = {x:0, y:0, width:0, height:0};
 
     if(localStorage.getItem("ulock") != null)
@@ -127,10 +129,16 @@ export class MarkerService {
     this.get(id).unlocked = unlocked;
     this.ulock.items[id] = unlocked;
     localStorage.setItem("ulock", JSON.stringify(this.ulock));
+
+    if(id != -1)
+      this.googleAnalyticsService.eventEmitter("unlock_interview", "interview_" + id, "unlock");
+    else
+      this.googleAnalyticsService.eventEmitter("unlock_interview", "bonus_interview", "unlock");
   }
 
   activateCode(code) {
     this.unlock(this.generatorService.decode(code), true);
+    this.googleAnalyticsService.eventEmitter("codes", code, "code activated");
   }
 
   prettyPrintMarkers() : string {

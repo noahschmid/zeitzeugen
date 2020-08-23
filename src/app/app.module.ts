@@ -25,6 +25,7 @@ import { LockedComponent } from './components/locked/locked.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { TeaserComponent } from './pages/teaser/teaser.component';
 import { PlayerComponent } from './components/player/player.component';
+import {GoogleAnalyticsService} from './services/google-analytics/google-analytics.service';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,7 @@ import { PlayerComponent } from './components/player/player.component';
     ZXingScannerModule,
     MatProgressBarModule
   ],
-  providers: [],
+  providers: [GoogleAnalyticsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
