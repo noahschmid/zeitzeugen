@@ -1,27 +1,13 @@
 # Zeitzeugen
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.4.
+This web application was developed as part of the project "Zeitzeugen" of the cultural commission "kultur baltschieder" for the 20th anniversary of the storm in Baltschieder on 15.10.2000, which devastated a large part of the village. The project "Zeitzeugen" consisted of an exhibition of photos of the storm distributed throughout the town with QR codes that could be scanned with this web application and then showed a corresponding audio interview with a person affected. The application also featured a map of the village 20 years ago with markers that showed the position of the various stations, with yellow markers indicating which stations had been visited already. A special interview would appear as a reward as soon as one visited all of the stations.
+
+I was responsible for recording and editing the audio interviews and developing the web application.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
